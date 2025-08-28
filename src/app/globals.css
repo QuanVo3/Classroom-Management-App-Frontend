@@ -1,0 +1,94 @@
+@import "tailwindcss";
+@tailwind utilities;
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+  --body-primary: #052b1e;
+  --body-secondary: #667f93;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #f9fbfc;
+    --foreground: #ededed;
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply bg-[var(--background)] text-[var(--foreground)];
+}
+
+@theme inline {
+  --font-base: var(--font-nunito);
+  --font-banner: var(--font-poppins);
+}
+
+@layer components {
+  .body-xSmall-regular {
+    @apply text-[10px] font-medium leading-normal; /* Medium - 500 */
+  }
+  .body-small-medium {
+    @apply text-[12px] font-medium leading-normal; /* Medium - 500 */
+  }
+  .body-medium-regular {
+    @apply text-sm font-normal leading-normal; /* Regular - 400 */
+  }
+  .body-medium-medium {
+    @apply text-sm font-medium leading-normal; /* Medium - 500 */
+  }
+  .body-medium-semibold {
+    @apply text-sm font-semibold leading-normal font-base; /* SemiBold - 600 */
+  }
+  .body-medium-bold {
+    @apply text-sm font-bold leading-normal; /* Bold - 700 */
+  }
+
+  .body-large-regular {
+    @apply text-base font-normal leading-normal; /* Medium - 500 */
+  }
+
+  .body-large-medium {
+    @apply text-base font-medium leading-normal; /* Medium - 500 */
+  }
+  .body-large-xBold {
+    @apply text-base font-extrabold leading-normal; /* Medium - 500 */
+  }
+  .body-large-bold {
+    @apply text-base font-bold leading-normal; /* Medium - 500 */
+  }
+  .body-large-semibold {
+    @apply text-base font-semibold leading-normal; /* Medium - 500 */
+  }
+  .body-large-regular {
+    @apply text-base font-normal leading-normal; /* Medium - 500 */
+  }
+  .body-xLarge-medium {
+    @apply text-lg font-medium leading-normal; /* Medium - 500 */
+  }
+  .body-xxLarge-medium {
+    @apply text-xl font-medium leading-normal; /* Medium - 500 */
+  }
+  .text-body-primary {
+    @apply text-[var(--body-primary)];
+  }
+  .text-body-secondary {
+    @apply text-[var(--body-secondary)];
+  }
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none; /* IE/Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+#chat-action-random-text {
+  color: #667f93;
+}
