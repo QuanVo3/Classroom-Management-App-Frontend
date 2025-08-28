@@ -46,7 +46,7 @@ src/
 🔑 Đăng nhập & OTP
 Ứng dụng đăng nhập bằng OTP qua SMS.
 Tính năng này phụ thuộc vào backend. Nếu backend đang tạm bỏ qua xác thực OTP (do dùng Vonage Free chỉ gửi được về số test đã xác minh), khi nhập số điện thoại bất kỳ ở frontend:
-- Bước 1: Nhập số điện thoại → "Gửi mã OTP" (backend sẽ bỏ qua gửi OTP thật nếu đang ở chế độ test)
+- Bước 1: Nhập số điện thoại (0785108900) std đã tạo sẵn → "Gửi mã OTP"
 - Bước 2: Nhập mã OTP (có thể gõ bất kỳ 6 chữ số khi backend bỏ qua xác thực)
 - Bước 3: Hệ thống sẽ tạo hoặc tìm tài khoản và đăng nhập
 💡 Nếu muốn test OTP thật:
