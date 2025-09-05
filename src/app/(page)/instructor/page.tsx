@@ -6,8 +6,7 @@ import ManageStudents from "@/src/components/manageStudent";
 import ManageLessons from "@/src/components/manageLesson";
 import ContactList from "@/src/components/contactList";
 import ChatBox from "@/src/components/chatBox";
-// 🔹 Hook giả sử có sẵn
-import { useStudent } from "@/src/hooks/student";
+
 import { useAuth } from "@/src/hooks/auth";
 import { useUser } from "@/src/hooks/user";
 import MyProfile from "@/src/components/myProfile";

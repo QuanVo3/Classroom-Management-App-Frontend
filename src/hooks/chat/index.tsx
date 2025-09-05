@@ -3,17 +3,20 @@
 import { useEffect, useState } from "react";
 import { io, Socket } from "socket.io-client";
 import { useAuth } from "../auth";
+import { useAtom } from "jotai";
+import { messagesAtom } from "@/src/jotai/message";
+import { useRequest } from "ahooks";
+import { getMessages } from "@/src/services/chat";
 
 export function useChat() {
   const [socket, setSocket] = useState<Socket | null>(null);
   const { userInfo } = useAuth();
-  const [messages, setMessages] = useState<any[]>([]);
+  const [messages, setMessages] = useAtom(messagesAtom);
 
   useEffect(() => {
     if (!userInfo?.token) return;
 
     const socket = io("http://localhost:3001", {
-      // đổi sang URL backend của bạn
       auth: { token: userInfo?.token },
     });
 
@@ -35,12 +38,24 @@ export function useChat() {
   const sendMessage = (toUserId: string, text: string) => {
     if (!socket) return;
     socket.emit("send_message", { toUserId, text });
-    // Optionally: tự thêm vào UI ngay
     setMessages((prev) => [
       ...prev,
       { from: "me", to: toUserId, text, createdAt: Date.now() },
     ]);
   };
 
-  return { messages, sendMessage };
+  const requestGetMessages = useRequest(
+    (peerUserId) => getMessages(peerUserId, userInfo?.token as string),
+    {
+      manual: true,
+      onSuccess: (res: any) => {
+        setMessages(res?.messages || []);
+      },
+      onError: (err: any) => {
+        console.log("Lỗi lấy tin nhắn:", err);
+      },
+    }
+  );
+
+  return { messages, setMessages, sendMessage, requestGetMessages };
 }

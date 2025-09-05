@@ -17,7 +17,7 @@ export const useUser = () => {
   const { userInfo } = useAuth();
   const [studentList, setStudentList] = useAtom(studentListAtom);
   const [selectedStudent, setSelectedStudent] = useAtom(selectedStudentAtom);
-  console.log("here", userInfo);
+
   //Lấy danh sách học sinh
   const requestGetAllStudents = useRequest(
     () => getAllStudents(userInfo?.token as string),

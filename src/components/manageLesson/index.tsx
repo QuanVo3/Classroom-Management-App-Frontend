@@ -74,7 +74,7 @@ const ManageLessons = () => {
                   <td className="p-3 font-medium text-gray-800">
                     {lesson.title}
                   </td>
-                  <td className="p-3 text-gray-700">{lesson.description}</td>
+                  <td className="p-3 text-gray-800">{lesson.description}</td>
                   <td className="p-3 space-x-3">
                     <button
                       className="text-blue-600 hover:underline"

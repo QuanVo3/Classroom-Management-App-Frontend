@@ -19,9 +19,8 @@ export const PATH = {
   delete_lesson: "/api/lesson/deleteLesson",
   update_lesson: "/api/lesson/updateLesson",
 
-  // Chat (tuỳ chọn nếu dùng REST để lấy lịch sử)
-  get_messages: "/api/chat/messages", // cần thêm /:userId nếu có
+ 
+  get_messages: "/api/chat/messages", 
 
-  // Student account setup (nếu có)
-  setup_account: "/api/auth/setupAccount", // endpoint để tạo username/password
+
 };

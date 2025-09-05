@@ -23,6 +23,6 @@
       "@/*": ["./*"] // Alias @/ trỏ tới thư mục gốc
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "src/app/layout.tsx"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "src/app/layout.tsx", "filter.js"],
   "exclude": ["node_modules"]
 }

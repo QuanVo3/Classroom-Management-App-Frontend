@@ -3,19 +3,16 @@ import { Axios } from ".";
 import { PATH } from "./path";
 const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL;
 
-// 📚 Giao bài học
 export const assignLesson = async (data: any, token: string) => {
   const URL = PATH.assign_lesson;
   return await Axios.post(URL, data, { baseURL: BASE_URL, token });
 };
 
-// 📚 Học sinh xem bài học
 export const getMyLessons = async (token: string) => {
   const URL = PATH.get_my_lessons;
   return await Axios.get(URL, undefined, { baseURL: BASE_URL, token });
 };
 
-// 📚 Học sinh đánh dấu hoàn thành
 export const markLessonDone = async (lessonId: string, token: string) => {
   const URL = PATH.mark_lesson_done;
   return await Axios.post(URL, { lessonId }, { baseURL: BASE_URL, token });

@@ -49,7 +49,7 @@ const MyLesson = () => {
             key={l.lessonId}
             className="bg-white p-4 rounded-lg shadow-sm border hover:shadow-md transition"
           >
-            <h2 className="font-semibold text-lg">{l.lesson?.title}</h2>
+            <h2 className="font-semibold text-lg text-gray-800">{l.lesson?.title}</h2>
             <p className="text-gray-600 mb-3">{l.lesson?.description}</p>
             <div className="flex justify-between items-center">
               <span
